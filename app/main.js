@@ -18,27 +18,30 @@ const website = document.getElementById("website");
 const twitter = document.getElementById("twitter");
 
 const switchMode = document.getElementById("switch-mode");
+const sun = document.getElementById("sun");
+const moon = document.getElementById("moon");
+const modeText = document.getElementById("mode-text");
 
 document.addEventListener("DOMContentLoaded", () => {
   getUserData("octocat");
 });
 
+if (localStorage.getItem("dark-mode") === "enabled") {
+  document.body.classList.add("dark");
+  modeText.innerHTML = "light";
+  sun.classList.remove("hidden");
+  moon.classList.add("hidden");
+  document.body.style.backgroundColor = "#141D2F";
+} else { 
+    modeText.innerHTML = "dark";
+    sun.classList.add("hidden");
+    moon.classList.remove("hidden");
+}
+
 switchMode.addEventListener("click", () => {
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-
-  localStorage.theme = "light";
-
-  localStorage.theme = "dark";
-
-  localStorage.removeItem("theme");
+  document.body.classList.toggle("dark");
+  const darkModeEnabled = document.body.classList.contains("dark");
+  localStorage.setItem("dark-mode", darkModeEnabled ? "enabled" : "disabled");
 });
 
 searchButton.addEventListener("click", () => {
