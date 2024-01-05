@@ -1,4 +1,4 @@
-const myToken = "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";
+//const myToken = "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";
 
 const userName = document.getElementById("search-string");
 const searchButton = document.getElementById("submit");
