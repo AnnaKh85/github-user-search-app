@@ -1,0 +1,14 @@
+{
+  "name": "github-user-search",
+  "version": "1.0.0",
+  "description": "Frontend Mentor | GitHub user search app",
+  "main": "index.html",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./app/input.css -o ./dist/output.css --watch"
+  },
+  "author": "Anna Khizhnyakova",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
