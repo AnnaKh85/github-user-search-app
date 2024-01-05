@@ -1,5 +1,3 @@
-const myToken = "123";
-
 const userName = document.getElementById("search-string");
 const searchButton = document.getElementById("submit");
 
@@ -49,11 +47,7 @@ searchButton.addEventListener("click", () => {
 });
 
 const getUserData = function (user) {
-  fetch(`https://api.github.com/users/${user}`, {
-    headers: {
-      Authorization: `Bearer ${myToken}`,
-    },
-  })
+  fetch(`https://api.github.com/users/${user}`)
     .then(function (response) {
       return response.json();
     })
