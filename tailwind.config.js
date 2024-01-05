@@ -3,6 +3,11 @@ module.exports = {
   darkMode: "class",
   content: ["index.html"],
   theme: {
+    screens: {
+      sm: "375px",
+      md: "768px",
+      lg: "1024px",
+    },
     extend: {
       fontFamily: {
         mono: ["Space Mono", "monospace"],
